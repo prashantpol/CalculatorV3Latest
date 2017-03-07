@@ -1,0 +1,23 @@
+html,body {height:100%;}
+/* Empty. Add your own CSS if you like */
+/* Empty. Add your own CSS if you like */
+.buttons
+{
+	background: #f9f9f9;text-align: center;vertical-align: middle;height: 100px;  padding: 0;
+	padding-top: 40px;font-size: 28px;
+	cursor: pointer;
+}
+.menusrow {
+    height: 20%;
+}
+
+.buttonrow {
+    height: 80%;
+}
+
+
+.textresult
+{
+	height: 100px;margin-left: 10px;
+	 background-color: #000;position: absolute; bottom:0px;box-shadow: none;text-shadow: none;color:#ffff;font-size: 30px;
+}
