@@ -133,7 +133,32 @@ angular.module('starter.controllers', [])
         }
       }
       console.log("Reached here");
-    } else {
+    }
+    else if(num=="sqrt")
+    {
+      if($scope.firstOperand!="")
+        {
+          $scope.result=$scope.firstOperand;
+
+          $scope.result=Math.sqrt(parseFloat($scope.result).toString());
+        }
+        
+      
+    } 
+      else if(num=="exp")
+    {
+      console.log('Reached exp');
+      if($scope.firstOperand!="")
+        {
+          $scope.result=$scope.firstOperand;
+
+          $scope.result=Math.exp(parseFloat($scope.result).toString());
+        }
+        
+      
+    } 
+
+    else {
       if ($scope.isFirstOperand) {
         $scope.firstOperand = $scope.firstOperand + num;
       } else {
