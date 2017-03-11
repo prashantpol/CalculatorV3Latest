@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','pascalprecht.translate'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,8 +23,54 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$translateProvider) {
 
+var en_translations = {
+    "1" : "1. Add button give's addition of two numbers",
+    "2" : "2. Subract button gives subraction of two numbers" ,
+    "3" : "3. Division button gives division of two numbers" ,
+    "4" : "4. Multiply numbers gives multiplication of two numbers" 
+
+
+  }
+  
+  var hi_translations = {
+     "1" : "1. जोड़ें बटन आपको दो संख्याओं को जोड़ते हैं",
+    "2" : "2. घटाएं बटन दो नंबरों का खंडन देता है" ,
+    "3" : "3. डिवीजन बटन में दो नंबर का विभाजन होता है" ,
+    "4" : "4. गुणा संख्या दो संख्याओं का गुणन देता है" 
+ 
+  }
+
+   var mr_translations = {
+     "1" : "1. दोन संख्यांचा जोडा बटण देणे च्या व्यतिरिक्त",
+    "2" : "2. घटाएं बटन दो नंबरों का खंडन देता है" ,
+    "3" : "3. डिवीजन बटन में दो नंबर का विभाजन होता है" ,
+    "4" : "4. गुणाकार संख्या दोन संख्यांचा गुणाकार देते" 
+ 
+  }
+  
+
+   var gr_translations = {
+     "1" : "1. બે નંબરો ઉમેરો બટન આપી વધુમાં",
+    "2" : "2. બાદબાકી બટન બે નંબરો બાદબાકી" ,
+    "3" : "3. વિભાગ બટન બે નંબરો વિભાજન આપે" ,
+    "4" : "4. ગુણાકાર નંબરો બે નંબરો ગુણાકાર આપે" 
+ 
+  }
+  
+  
+  $translateProvider.translations('en',en_translations);
+  
+  $translateProvider.translations('hi',hi_translations);
+
+    $translateProvider.translations('mr',mr_translations);
+
+  $translateProvider.translations('gr',gr_translations);
+
+  
+  $translateProvider.preferredLanguage('en');
+  
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.

@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
  
-.controller('CalCtrl', function($scope, Chats) {
+.controller('CalCtrl', function($scope, Chats,$translate) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -171,12 +171,20 @@ angular.module('starter.controllers', [])
     }
   }
 
+
+
 $scope.test = "Calculator";
 
 })
 
-.controller('InfoCtrl', function($scope, $stateParams, Chats) {
+.controller('InfoCtrl', function($scope, $stateParams, Chats,$translate) {
   $scope.chat = Chats.get($stateParams.chatId);
+  $scope.changeLanguage = function(lang){
+  console.log('test');
+   $translate.use(lang); 
+  }
+
+
 })
 
 .controller('AccountCtrl', function($scope) {
